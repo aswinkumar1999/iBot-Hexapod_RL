@@ -19,6 +19,8 @@ To test if everything works
 ```bash
 cd ~/.mujoco/mujoco200/Hexapod_V1
 python3 triple_gait.py
+# or 
+python3 GYM_Style.py
 ```
 
 It should open up a window, with the Hexapod walking using Triple Gait... Check out the code for all the class implementations.. 
