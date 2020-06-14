@@ -7,6 +7,7 @@
 
 #Import required libraries
 import mujoco_py
+import numpy as np
 import rotations
 import os
 
@@ -24,8 +25,12 @@ class Hexapod_V1:
         if(self.render):
             self.viewer = mujoco_py.MjViewer(self.sim)
 
+        self.reward_val = 0
+        self.x_last = self.sim.data.qpos[0].copy()
+        self.start = self.sim.data.qpos[:3].copy()
+
     def get_position(self):
-        return self.sim.data.qpos[:3]
+        return [e1-e2 for (e1, e2) in zip(self.sim.data.qpos[:3], self.start)]
 
     def get_orientation(self):
         return self.sim.data.qpos[3:7]
@@ -36,11 +41,36 @@ class Hexapod_V1:
     def get_touch_data(self):
         return self.sim.data.sensordata
 
+    def reward(self):
+        self.reward_val = self.sim.data.qpos[0] - self.x_last
+        self.x_last = self.sim.data.qpos[0]
+        return self.reward_val
+
+    def done(self):
+        return False
+
+    def observation(self):
+        obs = list(self.get_position()) + list(self.get_orientation_euler()) + list(self.get_touch_data()) + list(self.get_joint_angles())
+        return obs
+
+    def action(self,action):
+        self.set_joint_angles(action)
+        self.run_sim()
+        return  np.array(self.observation()),np.array(self.reward()),np.array(self.done())
+
     def set_joint_angles(self,action):
-        self.sim.data.ctrl[:18] = action
+        self.sim.data.ctrl[:18] = list(action)
 
     def get_orientation_euler(self):
         return rotations.mat2euler(rotations.quat2mat(self.sim.data.qpos[3:7]))
+
+    def reset(self):
+        self.sim.reset()
+        self.reward_val = 0
+        self.x_last = self.sim.data.qpos[0].copy()
+        self.start = self.sim.data.qpos[:3].copy()
+        return np.array(self.observation())
+
 
     def run_sim(self,timestep=1):
         for i in range(100):

@@ -10,7 +10,7 @@ steps=[t1,t2,t3,t4]
 
 # Create an Object of Class Hexapod_V1
 # Feel free to name the bot anything you like :P
-nimbus = Hexapod.Hexapod_V1(render=False) # Defualt is FALSE
+nimbus = Hexapod.Hexapod_V1(render=True) # Defualt is FALSE
 
 for i in range(100):
     # Print (x,y,z) positions of the system.
