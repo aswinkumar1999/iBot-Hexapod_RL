@@ -1,6 +1,6 @@
 # iBot-Hexapod_RL
 
-# Installation Instrcutions 
+# Installation Instructions 
 
 1. Get MuJoCo from the MuJoCo Website
 
