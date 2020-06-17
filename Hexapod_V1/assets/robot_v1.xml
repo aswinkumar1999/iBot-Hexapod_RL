@@ -17,7 +17,7 @@
 
 <worldbody>
         <light pos="1 1 1" dir="0 -1 -1" diffuse="1 1 1"/>
-        <geom type="plane" size="1 1 0.1" rgba="1 0 0 0.3"/>
+        <geom type="plane" size="100 100 0.1" rgba="1 0 0 0.3"/>
 
         <body name="lower">
             <geom type="mesh" name="lower" mesh="lower" quat="0 0 0.707 0.707" pos="-0.010 0 .075" mass="0.294"></geom>
