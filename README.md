@@ -1,5 +1,17 @@
 # iBot-Hexapod_RL
 
+# Hexapod V1 
+
+- Modelled using STL files.
+- Hexapod Model with Basic Functionality and Python Interface
+
+# Hexapod V2
+
+- Added an Larger Plane 
+- Correct the Motor Torque Outputs
+- Adjusted the Damping and Stiffness factor of the Bot 
+- Added Transformation matrix for Easier SIM2REAL deployment. 
+
 # Installation Instructions 
 
 1. Get MuJoCo from the MuJoCo Website
