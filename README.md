@@ -7,10 +7,11 @@
 
 # Hexapod V2
 
-- Added an Larger Plane 
+- Added a Larger Plane
 - Correct the Motor Torque Outputs
-- Adjusted the Damping and Stiffness factor of the Bot 
-- Added Transformation matrix for Easier SIM2REAL deployment. 
+- Adjusted the Damping and Stiffness factor of the Bot
+- Added Transformation matrix for Easier SIM2REAL deployment.
+- General Stability of the bot improved and resembles much more closer to the real bot. 
 
 # Installation Instructions 
 
