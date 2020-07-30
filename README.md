@@ -1,9 +1,8 @@
 # iBot-Hexapod_RL
 
-# Hexapod V1 
+# Hexapod V3
 
-- Modelled using STL files.
-- Hexapod Model with Basic Functionality and Python Interface
+- Made it into a GYM Environment. 
 
 # Hexapod V2
 
@@ -12,6 +11,11 @@
 - Adjusted the Damping and Stiffness factor of the Bot
 - Added Transformation matrix for Easier SIM2REAL deployment.
 - General Stability of the bot improved and resembles much more closer to the real bot. 
+
+# Hexapod V1 
+
+- Modelled using STL files.
+- Hexapod Model with Basic Functionality and Python Interface
 
 # Installation Instructions 
 
@@ -30,10 +34,8 @@ mv iBot-Hexapod_RL/* .
 To test if everything works 
 
 ```bash
-cd ~/.mujoco/mujoco200/Hexapod_V1
-python3 triple_gait.py
-# or 
-python3 GYM_Style.py
+cd ~/.mujoco/mujoco200/Hexapod_V1=3
+python3 hexapod_triple_gait.py
 ```
 
 It should open up a window, with the Hexapod walking using Triple Gait... Check out the code for all the class implementations.. 
