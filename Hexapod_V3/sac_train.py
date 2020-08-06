@@ -5,7 +5,7 @@ from stable_baselines.sac.policies import LnMlpPolicy
 
 env = gym.make('gym_hexapod:Hexapod-v3')
 
-model = SAC(LnMlpPolicy, env, verbose=1)
+model = SAC(LnMlpPolicy, env, verbose=1, seed=1000, n_cpu_tf_sess=1)
 model.learn(total_timesteps=1000000)
 model.save("hexapod_sac")
 
