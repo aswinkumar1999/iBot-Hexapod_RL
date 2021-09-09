@@ -14,16 +14,42 @@
 
 # Hexapod V1 
 
-- Modelled using STL files.
+- Modeled using STL files.
 - Hexapod Model with Basic Functionality and Python Interface
 
 # Installation Instructions 
 
-1. Get MuJoCo from the MuJoCo Website
+## Prerequisites for Mujoco
 
-2. Install MuJoCo-Py ( Using pip or [from source](https://aswinkumar1999.github.io/robotics/mujoco/mujoco-py/openai/2020/05/15/mujoco-part-0/#/))
+- Install following packages and edit bashrc
+```
+sudo apt-get install -y libglew-dev libosmesa6-dev
+conda install -c anaconda patchelf
+echo 'export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGLEW.so' >> ~/.bashrc
+source ~/.bashrc
+```
 
-3. Clone this repository 
+### Install MuJoCo
+
+1. Obtain a 30-day free trial on the [MuJoCo website](https://www.roboti.us/license.html)
+   or free license if you are a student.
+   The license key will arrive in an email with your username and password.
+2. Download the MuJoCo version 2.0 binaries for
+   [Linux](https://www.roboti.us/download/mujoco200_linux.zip) or
+   [OSX](https://www.roboti.us/download/mujoco200_macos.zip).
+3. Unzip the downloaded `mujoco200` directory into `~/.mujoco/mujoco200`,
+   and place your license key (the `mjkey.txt` file from your email)
+   at `~/.mujoco/mjkey.txt`.
+
+<!-- 4. Add following line to .bashrc:
+  `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/user/.mujoco/mujoco200/bin` -->
+
+- If you want to specify a nonstandard location for the key and package,
+use the env variables `MUJOCO_PY_MJKEY_PATH` and `MUJOCO_PY_MUJOCO_PATH`.
+
+5. Install mujoco-py `pip install -U 'mujoco-py<2.1,>=2.0'`
+
+5. Clone this repository 
 
 ```bash
 cd ~/.mujoco/mujoco200/
@@ -35,7 +61,7 @@ To test if everything works
 
 ```bash
 cd ~/.mujoco/mujoco200/Hexapod_V1=3
-python3 hexapod_triple_gait.py
+python hexapod_triple_gait.py
 ```
 
 It should open up a window, with the Hexapod walking using Triple Gait... Check out the code for all the class implementations.. 
