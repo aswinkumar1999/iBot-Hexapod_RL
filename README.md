@@ -23,7 +23,7 @@
 
 - Install following packages and edit bashrc
 ```
-sudo apt-get install -y libglew-dev libosmesa6-dev
+sudo apt-get install -y libglew-dev libosmesa6-dev patchelf
 conda install -c anaconda patchelf
 echo 'export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGLEW.so' >> ~/.bashrc
 source ~/.bashrc
@@ -44,10 +44,8 @@ source ~/.bashrc
 <!-- 4. Add following line to .bashrc:
   `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/user/.mujoco/mujoco200/bin` -->
 
-- If you want to specify a nonstandard location for the key and package,
-use the env variables `MUJOCO_PY_MJKEY_PATH` and `MUJOCO_PY_MUJOCO_PATH`.
 
-5. Install mujoco-py `pip install -U 'mujoco-py<2.1,>=2.0'`
+4. Install mujoco-py `pip install -U 'mujoco-py<2.1,>=2.0'`
 
 5. Clone this repository 
 
@@ -60,7 +58,7 @@ mv iBot-Hexapod_RL/* .
 To test if everything works 
 
 ```bash
-cd ~/.mujoco/mujoco200/Hexapod_V1=3
+cd ~/.mujoco/mujoco200/Hexapod_V3
 python hexapod_triple_gait.py
 ```
 

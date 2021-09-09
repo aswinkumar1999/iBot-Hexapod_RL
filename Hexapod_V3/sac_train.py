@@ -1,5 +1,4 @@
 import gym
-# import gym_hexapod
 from stable_baselines import SAC
 from stable_baselines.sac.policies import LnMlpPolicy
 
