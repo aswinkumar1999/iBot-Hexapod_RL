@@ -35,30 +35,20 @@ source ~/.bashrc
    or free license if you are a student.
    The license key will arrive in an email with your username and password.
 2. Download the MuJoCo version 2.0 binaries for
-   [Linux](https://www.roboti.us/download/mujoco200_linux.zip) or
-   [OSX](https://www.roboti.us/download/mujoco200_macos.zip).
-3. Unzip the downloaded `mujoco200` directory into `~/.mujoco/mujoco200`,
-   and place your license key (the `mjkey.txt` file from your email)
-   at `~/.mujoco/mjkey.txt`.
+   [Linux](https://mujoco.org/download/mujoco210-linux-x86_64.tar.gz) or
+   [OSX](https://mujoco.org/download/mujoco210-macos-x86_64.tar.gz).
+3. Unzip the downloaded `mujoco210` directory into `~/.mujoco/mujoco210`
 
-<!-- 4. Add following line to .bashrc:
-  `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/user/.mujoco/mujoco200/bin` -->
+4. Add following line to .bashrc:
+  `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/user/.mujoco/mujoco210/bin`
 
 
-4. Install mujoco-py `pip install -U 'mujoco-py<2.1,>=2.0'`
+4. Install mujoco-py `pip install -U 'mujoco-py<2.2,>=2.1'`
 
-5. Clone this repository 
+5. Clone this repository and to test if everything works,
 
 ```bash
-cd ~/.mujoco/mujoco200/
-git clone https://github.com/aswinkumar1999/iBot-Hexapod_RL.git
-mv iBot-Hexapod_RL/* .
-```
-
-To test if everything works 
-
-```bash
-cd ~/.mujoco/mujoco200/Hexapod_V3
+cd ~/Hexapod_V3
 python hexapod_triple_gait.py
 ```
 
