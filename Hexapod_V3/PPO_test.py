@@ -65,6 +65,7 @@ def main():
     env = gym.make('gym_hexapod:Hexapod-v3')
     state_dim = env.observation_space.shape[0]
     action_dim = env.action_space.shape[0]
+    print("Hello")
     
     
     n_episodes = 5     # num of episodes to run
@@ -88,6 +89,7 @@ def main():
             action = ppo.select_action(state)
             action = np.clip(action,-1, 1)
             state, reward, done, _ = env.step(action)
+            print(state)
             ep_reward += reward
             env.render()
 

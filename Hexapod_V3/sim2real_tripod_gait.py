@@ -1,8 +1,6 @@
 import numpy as np
 import socket
-import signal
 import time
-from xbox360controller import Xbox360Controller
 
 # Initialise Transformation Matrix
 trans_mat = np.zeros((18,18))
@@ -59,8 +57,8 @@ t3_new = list(np.array(t3).dot(trans_mat))
 t4_new = list(np.array(t4).dot(trans_mat))
 steps_new=[t1_new,t2_new,t3_new,t4_new]
 
-TCP_IP = '192.168.31.21'
-TCP_PORT = 5080
+TCP_IP = '192.168.54.59'
+TCP_PORT = 80
 
 MESSAGE = ''
 
