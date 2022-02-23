@@ -35,12 +35,12 @@ source ~/.bashrc
 1. Download the MuJoCo version 2.0 binaries for
    [Linux](https://mujoco.org/download/mujoco210-linux-x86_64.tar.gz) or
    [OSX](https://mujoco.org/download/mujoco210-macos-x86_64.tar.gz).
-2. Unzip the downloaded `mujoco210` directory into `~/.mujoco`
+2. Unzip the downloaded tar.gz file and copy the `mujoco210` directory into `~/.mujoco`
 
 3. Add following line to .bashrc:
-   `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/$(USER)/.mujoco/mujoco210/bin`
+   `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/$USER/.mujoco/mujoco210/bin`
 
-4. Install gym version == 0.21.0 and mujoco-py `!pip install 'mujoco-py<2.2,>=2.1' 'gym==0.21.0'`
+4. Install gym version 0.21.0 and mujoco-py `pip install 'mujoco-py<2.2,>=2.1' 'gym==0.21.0'`
 
 5. Clone this repository and to test if everything works, run the following commands:
 
