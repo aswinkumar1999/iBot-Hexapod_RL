@@ -110,7 +110,7 @@ class Sim2Real:
         for i in range(len(self.m_id)):
             MESSAGE=MESSAGE+'#'+str(self.m_id[i])+'P'+str(self.m_val[i])
 
-        print(MESSAGE)
+        # print(MESSAGE)
         MESSAGE = MESSAGE + 'T200\r\n'
         return MESSAGE
         
@@ -125,7 +125,7 @@ class Sim2Real:
         for i in range(len(self.m_id)):
             MESSAGE=MESSAGE+'#'+str(self.m_id[i])+'P'+str(self.m_val[i]+int(action[i]))
 
-        print(MESSAGE)
+        # print(MESSAGE)
         MESSAGE = MESSAGE + 'T200\r\n'
         return MESSAGE
 
@@ -133,8 +133,8 @@ class Sim2Real:
 
 if __name__ == "__main__":
 
-    # orient = [ 0.43731648,  0.19700632,  0.57860664]
-    TCP_IP = '192.168.54.59'
+    orient = [ 0.43731648,  0.19700632,  0.57860664]
+    TCP_IP = '192.168.130.59'
     TCP_PORT = 80
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((TCP_IP, TCP_PORT))
@@ -143,9 +143,9 @@ if __name__ == "__main__":
     bot = Sim2Real()
     message = bot.reset()
     s.send(message.encode())
-    orient = repr(s.recv(1024))
+    orient1 = repr(s.recv(1024))
 
-    print('Received', orient)
+    print('Received',orient1)
     print("Bot Setup Complete")
     input("Enter Key to Continue")
 
@@ -154,8 +154,8 @@ if __name__ == "__main__":
 
         message = bot.step(orient)
         s.send(message.encode())
-        orient = repr(s.recv(1024))
-        print('Received', orient)
+        orient1 = repr(s.recv(1024))
+        print('Received',orient1)
 
 
 

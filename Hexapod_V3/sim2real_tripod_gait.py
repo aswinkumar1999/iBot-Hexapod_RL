@@ -57,7 +57,7 @@ t3_new = list(np.array(t3).dot(trans_mat))
 t4_new = list(np.array(t4).dot(trans_mat))
 steps_new=[t1_new,t2_new,t3_new,t4_new]
 
-TCP_IP = '192.168.54.59'
+TCP_IP = '192.168.146.59'
 TCP_PORT = 80
 
 MESSAGE = ''

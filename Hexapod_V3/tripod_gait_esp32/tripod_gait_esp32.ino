@@ -3,8 +3,8 @@
 #define RXD2 16
 #define TXD2 17
   
-const char* ssid = "Cadbury";
-const char* password = "chocolateS";
+const char* ssid = "OnePlus";
+const char* password = "qxej0808";
  
 WiFiServer wifiServer(80);
  

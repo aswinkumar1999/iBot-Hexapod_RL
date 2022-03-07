@@ -7,8 +7,8 @@
 #define TXD2 17
 Adafruit_MPU6050 mpu;
 
-const char* ssid = "Cadbury";
-const char* password = "chocolateS";
+const char* ssid = "OnePlus";
+const char* password = "qxej0808";
  
 WiFiServer wifiServer(80);
 
@@ -65,9 +65,9 @@ void loop() {
  
   WiFiClient client = wifiServer.available();
  
-  if (client) {
+  while (client) {
  
-    while (client.connected()) {
+//    while (client.connected()) {/
  
       while (client.available()>0) {
         Serial2.print(char(client.read()));
@@ -93,8 +93,8 @@ void loop() {
     
     }
  
-    client.stop();
-    Serial.println("Client disconnected");
+//    client.stop();/
+//    Serial.println("Client disconnected");
  
-  }
+  
 }
